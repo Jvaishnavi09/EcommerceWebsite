@@ -102,24 +102,24 @@ const Register = () => {
                 </button>
                 <ul className="dropdown-menu w-100 ">
                   <li>
-                    <a
+                    <Link
                       className="dropdown-item w-50"
                       type="button"
                       value="user"
                       onClick={handleChange}
                     >
                       User
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className="dropdown-item w-50"
                       type="button"
                       value="admin"
                       onClick={handleChange}
                     >
                       Admin
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

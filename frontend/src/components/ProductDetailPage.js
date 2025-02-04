@@ -12,7 +12,6 @@ const ProductDetailPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [alert, setAlert] = useState("");
   const [productAdded, setProductAdded] = useState(false);
-  const [productdesc, setProductDesc] = useState("");
   const dispatch = useDispatch();
 
   const min = 1;

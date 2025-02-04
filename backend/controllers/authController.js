@@ -32,7 +32,7 @@ export const register = async (req, res) => {
     // Set token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "None",
       maxAge: 3600000 * 24 * 7 * 52,
       // domain: ".yourbackend.com",
