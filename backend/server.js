@@ -20,7 +20,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-
+app.options("*", cors());
 app.use(
   cors({
     origin: process.env.FRONTEND_URL, // Frontend URL
