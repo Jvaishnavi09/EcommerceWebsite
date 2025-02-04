@@ -1,0 +1,10 @@
+{
+  "name": "mern-ecommerce",
+  "version": "1.0.0",
+  "description": "Full stack MERN e-commerce Application with JWT authentication, Stripe payments and admin features.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JayaVaishnavi Shenbagarajan",
+  "license": "ISC"
+}
