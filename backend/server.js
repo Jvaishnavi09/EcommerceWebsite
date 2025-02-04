@@ -28,7 +28,7 @@ app.use(
   })
 );
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
-app.use(express.static("public"));
+app.use(express.static("uploads"));
 
 // Connect to MongoDB
 connectDB();
@@ -100,4 +100,6 @@ app.use(errorHandler);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on port ${process.env.PORT}`)
+);
