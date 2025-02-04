@@ -20,13 +20,20 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.options("*", cors());
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL, // Frontend URL
-    credentials: true, // Allows cookies
-  })
-);
+// CORS configuration
+const corsOptions = {
+  origin: process.env.FRONTEND_URL, // Specify the exact frontend origin
+  credentials: true, // Allow credentials (cookies, authorization headers)
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+};
+
+// Enable CORS for all routes
+app.use(cors(corsOptions));
+
+// Handle preflight requests explicitly
+app.options("*", cors(corsOptions));
+
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 app.use(express.static("uploads"));
 
@@ -87,7 +94,6 @@ app.post(
       case "payment_intent.payment_failed":
         console.log("❌ Payment Failed:", event.data.object);
         break;
-
       default:
         console.log("Unhandled event type:", event.type);
     }
