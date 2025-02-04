@@ -1,0 +1,100 @@
+/* success page styling  */
+.success-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.check-icon {
+  font-size: 80px;
+  color: #28a745;
+}
+/* cancel page styling */
+.cancel-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.cancel-icon {
+  font-size: 80px;
+  color: #dc3545;
+}
+
+/*App font size */
+/* Default font size for mobile */
+p {
+  font-size: 14px;
+}
+
+/* Larger font size for tablets */
+@media (min-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Even larger font size for PCs and TVs */
+@media (min-width: 992px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+*:focus {
+  outline: 0.5px solid rgb(84, 88, 84) !important; /* Green outline */
+  box-shadow: 0 0 5px rgba(57, 55, 55, 0.425) !important; /* Green glow */
+}
+.password-container {
+  position: relative;
+}
+
+#togglepassword {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.alert-secondary {
+  background-color: #393737;
+  padding: 0px;
+}
+
+.welcome-Bar {
+  background: rgb(235, 175, 202);
+  background: linear-gradient(
+    217deg,
+    rgba(235, 175, 202, 1) 0%,
+    rgba(57, 55, 55, 1) 100%
+  );
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 12rem !important; /* Adjust card width to 12rem on small devices */
+    font-size: 2rem !important; /* Adjust font size to 0.875rem */
+  }
+
+  .card-body {
+    padding: 1rem !important; /* Adjust padding inside the card */
+  }
+}
+
+.cardhover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.cardhover:hover {
+  transform: scale(0.98); /* Slightly shrink the card when clicked */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow to give the pressed effect */
+}
+
+.form-label {
+  font-weight: 500;
+}
