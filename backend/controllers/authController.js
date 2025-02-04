@@ -32,11 +32,12 @@ export const register = async (req, res) => {
     // Set token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
-      maxAge: 3600000 * 24 * 7 * 52,
-      // domain: ".yourbackend.com",
-    }); // 1 hour
+      secure: process.env.NODE_ENV === "production", // Use `secure` only in production
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "strict", // Use `none` for cross-site in production
+      maxAge: 3600000 * 24 * 7 * 52, // 1 year expiration
+      domain: process.env.FRONTEND_DOMAIN, // Ensure this is set correctly
+      path: "/", // Accessible across the entire domain
+    });
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
     res.status(500).json({ message: "Server error" });
